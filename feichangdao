@@ -85,6 +85,6 @@ skip_failed_links=true
 ;clash_rule_base=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
 
 #过滤节点，正则匹配
-exclude_remarks=(IPV6|重置|流量|用户|本站|车|邀|免翻|邀请|域名|机场|计划|到期|套餐|官网|官方|欢迎|永久|访问|更多|关注|发布|增加|购买)
+exclude_remarks=(IPV6|剩余|流量|到期|套餐|官网|官方|欢迎|永久|访问|更多|关注|发布)
 
 ;luck
