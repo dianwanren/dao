@@ -21,6 +21,7 @@ https://raw.githubusercontent.com/dianwanren/dao/main/daochangzai.ini
 依次点击   
 容器——添加——命令行
 复制粘贴以下命令行（二选一）
+  
 tindy2013版本（该项目原作者的版本）
 
 ```bash
