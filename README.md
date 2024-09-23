@@ -37,7 +37,7 @@ docker run -d --restart=always -p 25500:25500 asdlokj1qpi23/subconverter:latest
 
 
    
-返回——docker——容器——勾选复选框——启用（红色字体表示禁用，绿色表示启用）  
+返回——docker——容器——勾选复选框——启用（红字表示禁用，绿色表示启用）  
 
 
 搭建后的地址  
