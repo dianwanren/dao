@@ -1,0 +1,32 @@
+你可以按照以下步骤来安装并修改文件名为 clash_meta。以下是步骤的调整：
+
+1. 进入内核安装目录：
+
+/etc/openclash/core/
+
+
+2. 下载所需内核安装包：
+原作者内核项目网址
+https://github.com/MetaCubeX/mihomo/releases
+X86下载以下后缀文件(GZ结尾、V后面只要纯数字的版本号，不带GO什么之类的）
+linux-amd64-compatible-v1.18.8.gz
+
+示范https://github.com/MetaCubeX/mihomo/releases/download/v1.18.8/mihomo-linux-amd64-compatible-v1.18.8.gz
+
+
+
+3. 解压安装包
+
+4. 将文件重命名为 clash_meta：
+上传至openwrt
+
+
+5. TTYD赋予文件权限（755）：
+
+cd /etc/openclash/core/
+
+chmod 755 clash_meta
+
+
+
+完成后，clash_meta就可以被 OpenClash 使用。
