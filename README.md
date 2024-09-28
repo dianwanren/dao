@@ -44,3 +44,11 @@ docker run -d --restart=always -p 25500:25500 asdlokj1qpi23/subconverter:latest
 ```bash
 http://localhost:25500/sub
 ```
+
+docker搭建本地前端
+```bash
+docker run -d --name subweb --restart always \
+  -p 18080:80 \
+  -v /mnt/GZ/conf:/usr/share/nginx/html/conf \
+  stilleshan/subweb
+```
