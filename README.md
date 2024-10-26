@@ -1,4 +1,4 @@
-feichangdao:                 正式版自用规则（主要适配普通内核）
+feichangdao:                 正式版自用规则（通用规则）
 
 ```bash
 https://raw.githubusercontent.com/dianwanren/dao/main/feichangdao.ini
