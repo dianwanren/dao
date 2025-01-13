@@ -81,7 +81,8 @@ proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点, 🌐 全部节点, 🟢 直连]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连|剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎)).)*$"}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]}
-  - {name: 🔔 谷歌服务, <<: *pr}
+#  - {name: 🔔 谷歌服务, <<: *pr}
+  - {name: 🔔 谷歌FCM, <<: *pr}
   - {name: 🍎 苹果服务, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: Ⓜ️ 微软必应, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
@@ -93,7 +94,7 @@ proxy-groups:
   - {name: 💬 Claude, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 🎮 EPIC, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 🎮 STEAM, <<: *pr}
-  #- {name: 🎮 其他游戏平台, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
+  - {name: 🎮 其他游戏平台, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 🎥 NETFLIX, <<: *pr}
@@ -114,28 +115,29 @@ proxy-groups:
   - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎)).)*$"}
 rules:
   - RULE-SET,private_domain,🎯 全球直连
+  - RULE-SET,GoogleFCM,🔔 谷歌FCM
+  - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,steamcn_domain,🎯 全球直连
 #  - RULE-SET,epiccn_domain,🎯 全球直连
-  - RULE-SET,youtube_domain,📹 YouTube
+#  - RULE-SET,google_domain,🔔 谷歌服务
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,chagpt,💬 chagpt
   - RULE-SET,gemini,💬 gemini
   - RULE-SET,copilot,💬 copilot
   - RULE-SET,claude,💬 Claude
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,google_domain,🔔 谷歌服务
   - RULE-SET,bing_domain,Ⓜ️ 微软必应
   - RULE-SET,onedrive_domain,Ⓜ️ 微软云盘
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
-  - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,epic_domain,🎮 EPIC
   - RULE-SET,steam_domain,🎮 STEAM
-#  - RULE-SET,game_domain,🎮 其他游戏平台
+  - RULE-SET,game_domain,🎮 其他游戏平台
 #  - RULE-SET,origin,🎮 游戏平台
 #  - RULE-SET,sony,🎮 游戏平台
 #  - RULE-SET,nintendo,🎮 游戏平台
 #  - RULE-SET,blizzard,🎮 游戏平台
+  - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,disney_domain,🎥 DISNEY+
   - RULE-SET,tiktok_domain,🎵 TikTok
@@ -149,7 +151,7 @@ rules:
   - RULE-SET,ChinaDomain,🎯 全球直连
   - RULE-SET,ChinaCompanyIp,🎯 全球直连
   - RULE-SET,Download,🎯 全球直连
-  - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
+#  - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
@@ -176,6 +178,7 @@ rule-providers:
 #  download: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list" }
 #  china: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list" }
 #  谷歌系列
+  GoogleFCM: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs" }
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
