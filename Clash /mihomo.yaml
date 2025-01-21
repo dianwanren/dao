@@ -68,7 +68,7 @@ dns:
     - "https://223.6.6.6/dns-query"
     "rule-set:geolocation-!cn":
       - "https://1.1.1.1/dns-query"
-      - "https://8.8.8.8/dns-queryy"
+      - "https://8.8.8.8/dns-query"
 
 proxies:
 - name: "🟢 直连"
