@@ -22,7 +22,6 @@ proxy-providers:
     url: "订阅链接"
     filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
 
-
 unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
@@ -101,7 +100,7 @@ proxy-groups:
   - {name: 💬 chagpt, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 💬 Claude, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 🎮 EPIC, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
-  - {name: 🎮 STEAM, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
+  - {name: 🎮 STEAM, <<: *pr}
   - {name: 🎮 其他游戏平台, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🇬🇧 英国节点]}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
