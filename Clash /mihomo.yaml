@@ -57,18 +57,22 @@ dns:
     - geosite:cn
   default-nameserver:
     - 101.101.101.101
+    - 223.5.5.5
   proxy-server-nameserver:
-    - "https://101.101.101.101/dns-query"
+    - 101.101.101.101
+    - 223.5.5.5
   nameserver:
-    - "https://1.1.1.1/dns-query"
-    - "https://8.8.8.8/dns-query"
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+    - 1.1.1.1
+    - 8.8.8.8
   nameserver-policy:
-    "rule-set:private_domain,cn_domain":
-    - "https://223.5.5.5/dns-query"
-    - "https://223.6.6.6/dns-query"
+    "rule-set:cn_domain,private_domain":
+      - https://223.6.6.6/dns-query
+      - https://223.5.5.5/dns-query
     "rule-set:geolocation-!cn":
-      - "https://1.1.1.1/dns-query"
-      - "https://8.8.8.8/dns-query"
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query
 
 proxies:
 - name: "🟢 直连"
