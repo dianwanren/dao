@@ -1,3 +1,4 @@
+# 机场订阅，名称不能重复
 proxy-providers:
   订阅名称1:
     type: http
@@ -7,7 +8,9 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "订阅地址1"
+    url: "订阅链接"
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
+    
   订阅名称2:
     type: http
     interval: 1800
@@ -16,7 +19,8 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "订阅地址2"
+    url: "订阅链接"
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
 
 
 unified-delay: true
