@@ -9,7 +9,8 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
+    
   订阅名称2:
     type: http
     interval: 1800
@@ -19,7 +20,8 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-      
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
+    
 # 用于下载订阅时指定UA
 global-ua: clash
     
