@@ -290,11 +290,11 @@ proxy-groups:
   - { name: YouTube, <<: *pr }
   - { name: NETFLIX, <<: *pr }
   - { name: TikTok, <<: *pr }
-  - { name: Spotify, <<: *pr }
+  - { name: Spotify, type: select, proxies: [美国, 自动选择, 香港, 台湾, 日本, 新加坡, 其它地区, 全部节点, DIRECT] }
   - { name: Github, <<: *pr }
-  - { name: Steam, <<: *pr }
-  - { name: OneDrive, <<: *pr }
-  - { name: 微软服务, <<: *pr }
+  - { name: Steam, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
+  - { name: OneDrive, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
+  - { name: 微软服务, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   - {
       name: 国内,
       type: select,
