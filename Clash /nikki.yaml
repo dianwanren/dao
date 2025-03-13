@@ -293,6 +293,7 @@ proxy-groups:
   - { name: Spotify, type: select, proxies: [美国, 自动选择, 香港, 台湾, 日本, 新加坡, 其它地区, 全部节点, DIRECT] }
   - { name: Github, <<: *pr }
   - { name: Steam, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
+  - { name: Epic, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   - { name: OneDrive, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   - { name: 微软服务, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   - {
@@ -357,6 +358,7 @@ rules:
   - GEOSITE,pixiv,Pixiv
   - GEOSITE,steam@cn,DIRECT
   - GEOSITE,steam,Steam
+  - GEOSITE,epicgames,Epic
   - GEOSITE,onedrive,OneDrive
   - GEOSITE,microsoft,微软服务
   - GEOSITE,geolocation-!cn,其他
