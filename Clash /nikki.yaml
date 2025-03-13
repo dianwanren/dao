@@ -199,7 +199,7 @@ tun:
 dns:
   enable: true
   listen: :1053
-  ipv6: true
+  ipv6: false
   # 路由器个人建议使用 redir-host 以最佳兼容性
   # 其他设备可以使用 fake-ip
   enhanced-mode: fake-ip
