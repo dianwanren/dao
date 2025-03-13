@@ -274,9 +274,9 @@ proxy-groups:
   # - { name: WARP前置, <<: *pr, exclude-type: "wireguard" }
 
   - { name: 广告拦截, type: select, proxies: [REJECT, DIRECT, 节点选择] }
-  - { name: 境外AI, <<: *pr }
+  - { name: 境外AI, type: select, proxies: [台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   # Apple 推荐走全局直连
-  - { name: Apple, <<: *pr }
+  - { name: Apple, type: select, proxies: [DIRECT, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点] }
   - { name: Google, <<: *pr }
   - { name: Telegram, <<: *pr }
   - { name: Twitter, <<: *pr }
