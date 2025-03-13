@@ -78,7 +78,7 @@ proxy-providers:
   订阅一:
     <<: *p
     # path: ./proxy_provider/订阅一.yaml
-    url: "https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default"
+    url: "此处填写订阅链接1"
     # 如需要为该订阅组节点添加前缀，取消下面两行注释
     # override:
       # additional-prefix: "[订阅一]"
@@ -86,7 +86,7 @@ proxy-providers:
   订阅二:
     <<: *p
     # path: ./proxy_provider/订阅二.yaml
-    url: "https://example.com/api/v1/client/subscribe?token=ilovechina"
+    url: "此处填写订阅链接2"
     # 如需要为该订阅组节点添加前缀，取消下面两行注释
     # override:
       # additional-prefix: "[订阅二]"
