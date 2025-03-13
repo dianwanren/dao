@@ -88,8 +88,8 @@ proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌐 全部节点, 🟢 直连]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "^((?!(直连|剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎)).)*$"}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]}
-#  - {name: 🔔 谷歌服务, <<: *pr}
-  - {name: 🔔 谷歌FCM, <<: *pr}
+  - {name: 🔔 谷歌服务, <<: *pr}
+#  - {name: 🔔 谷歌FCM, <<: *pr}
   - {name: 🍎 苹果服务, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
   - {name: Ⓜ️ 微软必应, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
@@ -122,11 +122,11 @@ proxy-groups:
   - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎)).)*$"}
 rules:
   - RULE-SET,private_domain,🎯 全球直连
-  - RULE-SET,GoogleFCM,🔔 谷歌FCM
+#  - RULE-SET,GoogleFCM,🔔 谷歌FCM
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,steamcn_domain,🎯 全球直连
 #  - RULE-SET,epiccn_domain,🎯 全球直连
-#  - RULE-SET,google_domain,🔔 谷歌服务
+  - RULE-SET,google_domain,🔔 谷歌服务
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,chagpt,💬 chagpt
   - RULE-SET,gemini,💬 gemini
@@ -185,7 +185,7 @@ rule-providers:
 #  download: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list" }
 #  china: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list" }
 #  谷歌系列
-  GoogleFCM: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list" }
+#  GoogleFCM: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs" }
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
