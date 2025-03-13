@@ -265,7 +265,7 @@ proxy-groups:
       name: 节点选择,
       type: select,
       proxies:
-        [全部节点, 自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, DIRECT],
+        [自动选择, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, DIRECT],
     }
   # 这里的 dns 指海外解析 dns 走的节点，一般跟随节点选择即可
   - { name: dns, <<: *pr }
