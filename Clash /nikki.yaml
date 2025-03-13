@@ -77,7 +77,8 @@ proxy-providers:
   订阅一:
     <<: *p
     # path: ./proxy_provider/订阅一.yaml
-    url: "https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default"
+    url: "此处填写订阅链接1"
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
     # 如需要为该订阅组节点添加前缀，取消下面两行注释
     # override:
       # additional-prefix: "[订阅一]"
@@ -85,7 +86,8 @@ proxy-providers:
   订阅二:
     <<: *p
     # path: ./proxy_provider/订阅二.yaml
-    url: "https://example.com/api/v1/client/subscribe?token=ilovechina"
+    url: "此处填写订阅链接2"
+    filter: "^((?!(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).)*$"
     # 如需要为该订阅组节点添加前缀，取消下面两行注释
     # override:
       # additional-prefix: "[订阅二]"
@@ -117,7 +119,7 @@ rule-providers:
 
 mode: rule
 # ipv6 支持
-ipv6: true
+ipv6: false
 log-level: info
 # 允许局域网连接
 allow-lan: true
@@ -131,7 +133,7 @@ unified-delay: true
 # 同时对所有ip进行连接，返回延迟最低的地址
 tcp-concurrent: true
 # 外部控制端口
-external-controller: :9090
+external-controller: :9099
 
 geodata-mode: true
 
@@ -207,25 +209,21 @@ dns:
     - '+.lan'
     - '+.local'
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
-    - '[2402:4e00::]'
-    - '[2400:3200::1]'
+    - 101.101.101.101
+    - 223.5.5.5'
   nameserver:
-    - 'tls://8.8.4.4#dns'
-    - 'tls://1.0.0.1#dns'
-    - 'tls://[2001:4860:4860::8844]#dns'
-    - 'tls://[2606:4700:4700::1001]#dns'
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query
   proxy-server-nameserver:
-    - https://doh.pub/dns-query
+    - 101.101.101.101
+    - 223.5.5.5
   nameserver-policy:
     "geosite:cn,private":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
+      - https://223.6.6.6/dns-query
+      - https://223.5.5.5/dns-query
     "geosite:!cn,!private": 
-      - "tls://dns.google"
-      - "tls://cloudflare-dns.com"
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query"
 
 # 多入站端口设置
 # listeners:
