@@ -17,6 +17,23 @@ proxy-providers:
       - "mihomo"
       - "Clash.meta"
 
+  Airport2:
+    url: "第二个订阅链接"
+    filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    header:
+      User-Agent:
+      - "Clash"
+      - "mihomo"
+      - "Clash.meta"
+
+
 # 节点信息
 proxies:
   - {name: 🟢 直连, type: direct, udp: true}
