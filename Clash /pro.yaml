@@ -10,7 +10,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: 直连
+    proxy: 🟢 直连
     header:
       User-Agent:
       - "Clash"
@@ -19,7 +19,7 @@ proxy-providers:
 
 # 节点信息
 proxies:
-  - {name: 直连, type: direct, udp: true}
+  - {name: 🟢 直连, type: direct, udp: true}
 
 # 全局配置 
 port: 7890
@@ -126,11 +126,6 @@ dns:
       - https://1.1.1.1/dns-query
       - https://8.8.8.8/dns-query
 
-proxies:
-- name: "🟢 直连"
-  type: direct
-  udp: true
-
 pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌐 全部节点, 🟢 直连]}
 
 proxy-groups:
@@ -174,6 +169,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_domain,🎯 全球直连
 #  - RULE-SET,GoogleFCM,🔔 谷歌FCM
+  - RULE-SET,applecn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,steamcn_domain,🎯 全球直连
 #  - RULE-SET,epiccn_domain,🎯 全球直连
@@ -247,7 +243,9 @@ rule-providers:
   onedrive_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs" }
   microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs" }
   bing_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bing.mrs" }
-  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
+#苹果
+  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
+  applecn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
   speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs" }
 #  游戏平台
   steamcn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs" }
