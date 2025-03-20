@@ -190,6 +190,7 @@ rules:
 #  - RULE-SET,GoogleFCM,🔔 谷歌FCM
   - RULE-SET,applecn_domain,🍎 苹果服务
   - RULE-SET,apple_domain,🍎 苹果服务
+  - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,steamcn_domain,🎯 全球直连
 #  - RULE-SET,epiccn_domain,🎯 全球直连
   - RULE-SET,gamecn_domain,🎯 全球直连
@@ -220,13 +221,12 @@ rules:
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,bahamut_domain,🐲 巴哈姆特
   - RULE-SET,bilibili_domain,📺 哔哩哔哩
-  - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,direct1,🎯 全球直连
-  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,ChinaDomain,🎯 全球直连
   - RULE-SET,ChinaCompanyIp,🎯 全球直连
   - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
