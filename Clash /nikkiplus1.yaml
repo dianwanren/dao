@@ -221,7 +221,7 @@ rules:
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,bahamut_domain,🐲 巴哈姆特
 #  - RULE-SET,bilibili_domain,📺 哔哩哔哩
-  - RULE-SET,direct1,🎯 全球直连
+#  - RULE-SET,direct1,🎯 全球直连
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,ChinaDomain,🎯 全球直连
   - RULE-SET,ChinaCompanyIp,🎯 全球直连
@@ -239,7 +239,7 @@ rule-anchor:
 rule-providers: 
 #  绕过局域网
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
-  direct1: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
+#  direct1: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
   proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/master/ProxyLite.list" }
 #  猫猫的直连规则
   ChinaDomain: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
