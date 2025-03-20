@@ -140,7 +140,6 @@ proxy-groups:
   - {name: Ⓜ️ 微软云盘, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 💬 AI, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  
 #  - {name: 💬 gemini, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
 #  - {name: 💬 copilot, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
 #  - {name: 💬 chagpt, type: select, proxies: [🟢 直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
@@ -163,7 +162,7 @@ proxy-groups:
   - {name: 🇨🇳 台湾节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)台|🇨🇳|台湾|TW|Tai" }
   - {name: 🇯🇵 日本节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)日|🇯🇵|日本|JP|Japan" }
   - {name: 🇰🇷 韩国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)韩|🇰🇷|韩国|KR|Korea" }
-  - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter:
+  - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇸🇬|新加坡|狮城|SG|Singapore" }
   - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)美|us|unitedstates|united states" }
   - {name: 🇬🇧 英国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇬🇧|英国|英|英格兰|UK|United Kingdom" }
   - {name: 🌐 全部节点, type: select, include-all: true}
@@ -242,12 +241,12 @@ rule-providers:
 #  GoogleFCM: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list" }
 #  电报
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
-#  微软系列
+#  微软服务
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs" }
   onedrive_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs" }
   microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs" }
   bing_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bing.mrs" }
-#  苹果
+#  苹果服务
   apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
   applecn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
 #  速度测试
