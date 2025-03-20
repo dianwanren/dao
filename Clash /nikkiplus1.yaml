@@ -175,7 +175,7 @@ proxy-groups:
   - {name: 🎧 Spotify, type: select, proxies: [🇺🇸 美国节点, 🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇬🇧 英国节点]}
   - {name: ✈️ Speedtest, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
   - {name: 🐲 巴哈姆特, type: select, proxies: [🇨🇳 台湾节点, 🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点,  🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: 📺 哔哩哔哩, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
+#  - {name: 📺 哔哩哔哩, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)港|🇭🇰|香港|HK|Hong" }
   - {name: 🇨🇳 台湾节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)台|🇨🇳|台湾|TW|Tai" }
@@ -220,7 +220,7 @@ rules:
   - RULE-SET,spotify_domain,🎧 Spotify
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,bahamut_domain,🐲 巴哈姆特
-  - RULE-SET,bilibili_domain,📺 哔哩哔哩
+#  - RULE-SET,bilibili_domain,📺 哔哩哔哩
   - RULE-SET,direct1,🎯 全球直连
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,ChinaDomain,🎯 全球直连
