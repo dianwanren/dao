@@ -188,7 +188,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_domain,🎯 全球直连
 #  - RULE-SET,GoogleFCM,🔔 谷歌FCM
-  - RULE-SET,applecn_domain,🎯 全球直连
+  - RULE-SET,applecn_domain,🍎 苹果服务
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,steamcn_domain,🎯 全球直连
 #  - RULE-SET,epiccn_domain,🎯 全球直连
