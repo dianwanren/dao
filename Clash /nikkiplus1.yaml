@@ -16,7 +16,7 @@ proxy-providers:
       - "Clash.meta"
       - "Clash"
       - "mihomo"
-    Airport1:
+    Airport2:
     url: "填写订阅链接2"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
