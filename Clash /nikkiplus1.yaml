@@ -185,8 +185,8 @@ proxy-groups:
   - {name: 🇬🇧 英国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇬🇧|英国|英|英格兰|UK|United Kingdom" }
   - {name: 🌐 全部节点, type: select, include-all: true}
 rules:
-#  让某个域名走某个代理(举例让所有baidu.com走直连)
-#  - DOMAIN-SUFFIX,baidu.com,🎯 全球直连
+#  让某个域名走某个代理(举例让所有asus.com走直连)
+#  - DOMAIN-SUFFIX,asus.com,🎯 全球直连
 #  让某个IP走某个代理（举例让内网某台设备走直连）
 #  - SRC-IP-CIDR,192.168.1.2/32,🎯 全球直连
 #  以下为正式规则
