@@ -1,8 +1,8 @@
-# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # 机场订阅
+# Airport1 Airport2 为机场名称，可自定义
 proxy-providers:
   Airport1:
-    url: "订阅链接"
+    url: "填写订阅链接1"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
     interval: 86400
@@ -13,12 +13,11 @@ proxy-providers:
     proxy: 🟢 直连
     header:
       User-Agent:
+      - "Clash.meta"
       - "Clash"
       - "mihomo"
-      - "Clash.meta"
-
-  Airport2:
-    url: "第二个订阅链接"
+    Airport1:
+    url: "填写订阅链接2"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
     interval: 86400
@@ -29,9 +28,9 @@ proxy-providers:
     proxy: 🟢 直连
     header:
       User-Agent:
+      - "Clash.meta"
       - "Clash"
       - "mihomo"
-      - "Clash.meta"
 
 
 # 节点信息
@@ -61,7 +60,7 @@ profile:
   store-fake-ip: true
 
 # 控制面板
-external-controller: 0.0.0.0:9099
+external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: "/etc/mihomo/run/ui"
 external-ui-name: zashboard
@@ -186,6 +185,11 @@ proxy-groups:
   - {name: 🇬🇧 英国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇬🇧|英国|英|英格兰|UK|United Kingdom" }
   - {name: 🌐 全部节点, type: select, include-all: true}
 rules:
+#  让某个域名走某个代理(举例让所有baidu.com走直连)
+#  - DOMAIN-SUFFIX,baidu.com,🎯 全球直连
+#  让某个IP走某个代理（举例让内网某台设备走直连）
+#  - SRC-IP-CIDR,192.168.1.2/32,🎯 全球直连
+#  以下为正式规则
   - RULE-SET,private_domain,🎯 全球直连
 #  - RULE-SET,GoogleFCM,🔔 谷歌FCM
   - RULE-SET,applecn_domain,🍎 苹果服务
