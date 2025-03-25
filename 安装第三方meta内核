@@ -6,18 +6,21 @@
 
 
 2. 下载所需内核安装包：
-原作者内核项目网址
-https://github.com/MetaCubeX/mihomo/releases
-X86下载以下后缀文件(GZ结尾、V后面只要纯数字的版本号，不带GO什么之类的）
-linux-amd64-compatible-v1.18.8.gz
+原作者内核项目网址:https://github.com/MetaCubeX/mihomo/releases
+X86下载以下后缀文件  (GZ结尾、V后面只要纯数字的版本号，不带GO什么之类的)
 
-示范https://github.com/MetaCubeX/mihomo/releases/download/v1.18.8/mihomo-linux-amd64-compatible-v1.18.8.gz
+截至2025.3.25  最新为v1.19.3核心
+mihomo-linux-amd64-compatible-v1.19.3.gz
+
+示范https://github.com/MetaCubeX/mihomo/releases/download/v1.19.3/mihomo-linux-amd64-compatible-v1.19.3.gz
 
 
 
 3. 解压安装包
 
-4. 将文件重命名为 clash_meta：
+4. 将文件重命名为:
+clash_meta
+
 上传至openwrt
 
 
