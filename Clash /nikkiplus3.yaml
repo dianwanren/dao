@@ -117,22 +117,22 @@ proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区, 🌐 全部节点, DIRECT]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "^((?!(直连)).)*$"}
   - {name: 🔔 谷歌服务, <<: *pr}
-  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软必应, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软云盘, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
+  - {name: Ⓜ️ 微软必应, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
+  - {name: Ⓜ️ 微软云盘, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
-  - {name: 💬 AI, type: select, proxies: [DIRECT, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: 🎮 游戏平台, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: 💬 AI, type: select, proxies: [🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇨🇳 台湾节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区, DIRECT]}
+  - {name: 🎮 游戏平台, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 🎥 NETFLIX, <<: *pr}
   - {name: 🎥 DISNEY+, <<: *pr}
   - {name: 🐦 Twitter, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
-  - {name: 🎧 Spotify, type: select, proxies: [🇺🇸 美国节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: ✈️ Speedtest, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
-  - {name: 🐲 巴哈姆特, type: select, proxies: [🇨🇳 台湾节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点,  🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: 🎧 Spotify, type: select, proxies: [🇺🇸 美国节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇬🇧 英国节点, 🌍 其它地区]}
+  - {name: ✈️ Speedtest, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
+  - {name: 🐲 巴哈姆特, type: select, proxies: [🇨🇳 台湾节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点,  🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区]}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)港|🇭🇰|香港|HK|Hong" }
   - {name: 🇨🇳 台湾节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)台|🇨🇳|台湾|TW|Tai" }
