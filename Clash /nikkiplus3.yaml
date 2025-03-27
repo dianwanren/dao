@@ -1,4 +1,4 @@
-# 正式版规则
+# 正式版规则，初步优化水果下载问题
 # 机场订阅
 proxy-providers:
   Airport1:
@@ -150,7 +150,7 @@ rules:
 #  - SRC-IP-CIDR,192.168.1.2/32,DIRECT
 #  以下为正式规则
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,apple@cn_domain,DIRECT
+#  - RULE-SET,apple@cn_domain,DIRECT
   - RULE-SET,apple-cn_domain,DIRECT
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,steam@cn_domain,DIRECT
@@ -208,7 +208,7 @@ rule-providers:
   bing_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bing.mrs" }
 #  苹果服务
   apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
-  apple@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.mrs" }
+#  apple@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.mrs" }
   apple-cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
 #  速度测试
   speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs" }
