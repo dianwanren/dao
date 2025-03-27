@@ -1,8 +1,8 @@
-# nikkiplus1的清凉版规则
-# Airport1 Airport2 为机场名称，可自定义
+# 正式版规则
+# 机场订阅
 proxy-providers:
   Airport1:
-    url: "此处填写订阅链接1"
+    url: "订阅地址1"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
     interval: 86400
@@ -11,8 +11,9 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: DIRECT
+
   Airport2:
-    url: "此处填写订阅链接2"
+    url: "订阅地址2"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
     interval: 86400
@@ -20,20 +21,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: DIRECT
-    
-    
-    
-global-ua: clash.meta
-
-
-geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-
-
+    proxy: DIRECT    
 
 # 全局配置 
 port: 7890
@@ -59,7 +47,7 @@ profile:
 
 # 控制面板
 external-controller: 0.0.0.0:9099
-secret: "ZWQyNTUxOQA5ACBH671hP3gqD5lCipW91m"
+secret: ""
 external-ui: "/etc/mihomo/run/ui"
 external-ui-name: zashboard
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
@@ -79,18 +67,6 @@ sniffer:
     - "+.v2ex.com"
   skip-domain:
     - "rule-set:private_domain,cn_domain"
-    - "dlg.io.mi.com"
-    - "+.push.apple.com"
-    - "+.apple.com"
-    - "+.wechat.com"
-    - "+.qpic.cn"
-    - "+.qq.com"
-    - "+.wechatapp.com"
-    - "+.vivox.com"
-    - "+.oray.com"
-    - "+.sunlogin.net"
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
 
 # 入站  
 tun:
@@ -116,51 +92,47 @@ dns:
     - "+.services.googleapis.cn"
     - "+.xn--ngstr-lra8j.com"
     - "time.*.com"
-    - "+.pool.ntp.org"
-    - "+.ntp.tencent.com"
-    - "+.ntp1.aliyun.com"
-    - "+.ntp.ntsc.ac.cn"
-    - "+.cn.ntp.org.cn"
   default-nameserver:
     - 101.101.101.101
     - 223.5.5.5
   proxy-server-nameserver:
-    - 101.101.101.101
-    - 223.5.5.5
-  nameserver:
-    - https://1.1.1.1/dns-query
-    - https://8.8.8.8/dns-query
-  nameserver-policy:
-    "rule-set:cn_domain,private_domain":
-      - https://223.6.6.6/dns-query
       - https://223.5.5.5/dns-query
-    "rule-set:gfw_domain,geolocation-!cn":
+      - https://1.12.12.12/dns-query
+  nameserver:
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query
+      - 1.1.1.1
+      - 8.8.8.8
+  nameserver-policy:
+    "rule-set:cn_domain,private_domain,apple_domain,apple@cn_domain,apple-cn_domain":
+      - https://223.5.5.5/dns-query
+      - https://1.12.12.12/dns-query
+    "rule-set:geolocation-!cn":
       - https://1.1.1.1/dns-query
       - https://8.8.8.8/dns-query
 
-pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌐 全部节点, 🎯 全球直连]}
+pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区, 🌐 全部节点, DIRECT]}
 
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌐 全部节点, 🎯 全球直连]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🌍 其它地区, 🌐 全部节点, DIRECT]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "^((?!(直连)).)*$"}
-  - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
   - {name: 🔔 谷歌服务, <<: *pr}
-  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软必应, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: Ⓜ️ 微软云盘, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
+  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: Ⓜ️ 微软必应, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: Ⓜ️ 微软云盘, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
-  - {name: 💬 AI, type: select, proxies: [🎯 全球直连, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: 🎮 游戏平台, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
+  - {name: 💬 AI, type: select, proxies: [DIRECT, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: 🎮 游戏平台, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 🎥 NETFLIX, <<: *pr}
   - {name: 🎥 DISNEY+, <<: *pr}
   - {name: 🐦 Twitter, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
-  - {name: 🎧 Spotify, type: select, proxies: [🇺🇸 美国节点, 🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇬🇧 英国节点]}
-  - {name: ✈️ Speedtest, type: select, proxies: [🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
-  - {name: 🐲 巴哈姆特, type: select, proxies: [🇨🇳 台湾节点, 🎯 全球直连, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点,  🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点]}
+  - {name: 🎧 Spotify, type: select, proxies: [🇺🇸 美国节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: ✈️ Speedtest, type: select, proxies: [DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
+  - {name: 🐲 巴哈姆特, type: select, proxies: [🇨🇳 台湾节点, DIRECT, 🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点,  🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🌍 其它地区, 🇬🇧 英国节点]}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)港|🇭🇰|香港|HK|Hong" }
   - {name: 🇨🇳 台湾节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)台|🇨🇳|台湾|TW|Tai" }
@@ -169,18 +141,20 @@ proxy-groups:
   - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇸🇬|新加坡|狮城|SG|Singapore" }
   - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)美|us|unitedstates|united states" }
   - {name: 🇬🇧 英国节点, type: url-test, include-all: true, tolerance: 100, interval: 300, filter: "(?i)🇬🇧|英国|英|英格兰|UK|United Kingdom" }
+  - {name: 🌍 其它地区,type: select,include-all: true,filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|韩|🇰🇷|韩国|KR|Korea|新|sg|singapore|美|us|unitedstates|🇬🇧|英国|英|英格兰|UK|United Kingdom)).*" }
   - {name: 🌐 全部节点, type: select, include-all: true}
 rules:
 #  让某个域名走某个代理(举例让所有asus.com走直连,如需使用去掉下面的注释)
-#  - DOMAIN-SUFFIX,asus.com,🎯 全球直连
+#  - DOMAIN-SUFFIX,apple.com,DIRECT
 #  让某个IP走某个代理（举例让内网某台设备走直连,如需使用去掉下面的注释）
-#  - SRC-IP-CIDR,192.168.1.2/32,🎯 全球直连
+#  - SRC-IP-CIDR,192.168.1.2/32,DIRECT
 #  以下为正式规则
-  - RULE-SET,private_domain,🎯 全球直连
-  - RULE-SET,applecn_domain,🎯 全球直连
+  - RULE-SET,private_domain,DIRECT
+  - RULE-SET,apple@cn_domain,DIRECT
+  - RULE-SET,apple-cn_domain,DIRECT
   - RULE-SET,proxylite,🚀 节点选择
-  - RULE-SET,steamcn_domain,🎯 全球直连
-  - RULE-SET,gamecn_domain,🎯 全球直连
+  - RULE-SET,steam@cn_domain,DIRECT
+  - RULE-SET,games@cn_domain,DIRECT
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,twitter_domain,🐦 Twitter
   - RULE-SET,ai_domain,💬 AI
@@ -194,19 +168,19 @@ rules:
   - RULE-SET,google_domain,🔔 谷歌服务
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,spotify_domain,🎧 Spotify
-  - RULE-SET,game_domain,🎮 游戏平台
+  - RULE-SET,games_domain,🎮 游戏平台
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,disney_domain,🎥 DISNEY+
   - RULE-SET,bahamut_domain,🐲 巴哈姆特
-  - RULE-SET,ChinaDomain,🎯 全球直连
-  - RULE-SET,Download,🎯 全球直连
-  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,Download,DIRECT
+  - RULE-SET,cn_domain,DIRECT
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,ChinaCompanyIp,🎯 全球直连
-  - RULE-SET,cn_ip,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,DIRECT
+  - RULE-SET,cn_ip,DIRECT
   - MATCH,🐟 漏网之鱼
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
@@ -234,15 +208,16 @@ rule-providers:
   bing_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bing.mrs" }
 #  苹果服务
   apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
-  applecn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
+  apple@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.mrs" }
+  apple-cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
 #  速度测试
   speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs" }
 #  游戏平台
-  steamcn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs" }
-  steam_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
-  epic_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs" }
-  gamecn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs" }
-  game_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs" }
+  steam@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs" }
+ # steam_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
+#  epic_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs" }
+  games@cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs" }
+  games_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs" }
 #  影音娱乐
   twitter_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs" }
   tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs" }
@@ -250,12 +225,12 @@ rule-providers:
   netflix_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs" }
   disney_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs" }
 #  哔哩哔哩
-  bilibili_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs" }
+#  bilibili_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs" }
 #  巴哈姆特
   bahamut_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs" }
 #  国外网站
   geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs" }
-  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs" }
+#  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs" }
 #  国内网站
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
 #  IP规则
