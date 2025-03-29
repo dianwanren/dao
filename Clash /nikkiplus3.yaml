@@ -67,6 +67,10 @@ sniffer:
     - "+.v2ex.com"
   skip-domain:
     - "rule-set:private_domain,cn_domain"
+    - "Mijia Cloud"
+    - "dlg.io.mi.com"
+    - "+.push.apple.com"
+    - "+.apple.com"    
 
 # 入站  
 tun:
