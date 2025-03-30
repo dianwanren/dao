@@ -66,7 +66,6 @@ sniffer:
   force-domain:
     - "+.v2ex.com"
   skip-domain:
-    - "rule-set:private_domain,cn_domain"
     - "Mijia Cloud"
     - "dlg.io.mi.com"
     - "+.push.apple.com"
@@ -92,10 +91,24 @@ dns:
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:private_domain,cn_domain"
-    - "+.services.googleapis.cn"
-    - "+.xn--ngstr-lra8j.com"
-    - "time.*.com"
+    - +.+m2m
+    - +.$injections.adguard.org
+    - +.$local.adguard.org
+    - +.+bogon
+    - +.+lan
+    - +.+localdomain
+    - +.home.arpa
+    - dns.msftncsi.com
+    - "*.srv.nintendo.net"
+    - "*.stun.playstation.net"
+    - xbox.*.microsoft.com
+    - "*.xboxlive.com"
+    - "*.turn.twilio.com"
+    - "*.stun.twilio.com"
+    - stun.syncthing.net
+    - stun.*
+    - "*.sslip.io"
+    - "*.nip.io"
   default-nameserver:
     - 101.101.101.101
     - 223.5.5.5
