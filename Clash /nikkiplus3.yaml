@@ -164,7 +164,7 @@ rules:
 #  - RULE-SET,apple@cn_domain,DIRECT
   - RULE-SET,apple-cn_domain,DIRECT
   - RULE-SET,proxylite,🚀 节点选择
-  - RULE-SET,steam@cn_domain,DIRECT
+#  - RULE-SET,steam@cn_domain,DIRECT
   - RULE-SET,games@cn_domain,DIRECT
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,twitter_domain,🐦 Twitter
@@ -224,8 +224,8 @@ rule-providers:
 #  速度测试
   speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs" }
 #  游戏平台
-  steam@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs" }
- # steam_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
+#  steam@cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs" }
+#  steam_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
 #  epic_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs" }
   games@cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs" }
   games_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs" }
