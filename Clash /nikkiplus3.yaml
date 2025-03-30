@@ -92,8 +92,6 @@ dns:
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - +.+m2m
-    - +.$injections.adguard.org
-    - +.$local.adguard.org
     - +.+bogon
     - +.+lan
     - +.+localdomain
