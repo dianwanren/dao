@@ -52,7 +52,7 @@ external-ui: "/etc/mihomo/run/ui"
 external-ui-name: zashboard
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
-# 嗅探
+### 域名嗅探
 sniffer:
   enable: true
   sniff:
@@ -63,12 +63,8 @@ sniffer:
       ports: [443, 8443]
     QUIC:
       ports: [443, 8443]
-  force-domain:
-    - "+.v2ex.com"
   skip-domain:
-    - "+.apple.com"    
     - "Mijia Cloud"
-    - "dlg.io.mi.com"
     - "+.push.apple.com"
 
 # 入站  
