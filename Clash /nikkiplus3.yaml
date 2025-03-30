@@ -183,11 +183,11 @@ rules:
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,disney_domain,🎥 DISNEY+
   - RULE-SET,bahamut_domain,🐲 巴哈姆特
+  - RULE-SET,gfw_domain,🚀 节点选择
+  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,ChinaDomain,DIRECT
   - RULE-SET,Download,DIRECT
   - RULE-SET,cn_domain,DIRECT
-  - RULE-SET,gfw_domain,🚀 节点选择
-  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
