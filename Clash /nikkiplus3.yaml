@@ -66,10 +66,10 @@ sniffer:
   force-domain:
     - "+.v2ex.com"
   skip-domain:
+    - "+.apple.com"    
     - "Mijia Cloud"
     - "dlg.io.mi.com"
     - "+.push.apple.com"
-    - "+.apple.com"    
 
 # 入站  
 tun:
