@@ -186,6 +186,7 @@ rules:
   - RULE-SET,ChinaDomain,DIRECT
   - RULE-SET,Download,DIRECT
   - RULE-SET,cn_domain,DIRECT
+  - RULE-SET,gfw_domain,🚀 节点选择
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,google_ip,🔔 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
@@ -241,7 +242,7 @@ rule-providers:
   bahamut_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs" }
 #  国外网站
   geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs" }
-#  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs" }
+  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs" }
 #  国内网站
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
 #  IP规则
