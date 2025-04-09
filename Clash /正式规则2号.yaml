@@ -142,11 +142,11 @@ proxy-groups:
   - {name: 🇹🇼 - 手动选择, <<: *Select, filter: *FilterTW}
   
   #其他地区
-  - {name: 🌍 其他节点 - 自动选择, <<: *Select, filter: *FilterOthers}
-  - {name: 🌍 其他节点 - 手动选择, <<: *Auto, filter: *FilterOthers}
+  - {name: 🌍 其他节点 - 手动选择, <<: *Select, filter: *FilterOthers}
+  - {name: 🌍 其他节点 - 自动选择, <<: *Auto, filter: *FilterOthers}
 #全部节点
-  - {name: 🌐 全部节点 - 自动选择, <<: *Select, filter: *FilterAll}
-  - {name: 🌐 全部节点 - 手动选择, <<: *Auto, filter: *FilterAll}
+  - {name: 🌐 全部节点 - 手动选择, <<: *Select, filter: *FilterAll}
+  - {name: 🌐 全部节点 - 自动选择, <<: *Auto, filter: *FilterAll}
 
 ### 规则配置
 RuleSet_classical: &RuleSet_classical {type: http, behavior: classical, interval: 43200, format: text, proxy: 🎯 节点选择}
