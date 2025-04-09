@@ -88,14 +88,15 @@ NodeParam: &NodeParam {type: http, interval: 86400, health-check: {enable: true,
 # 节点订阅
 proxy-providers: 
   Node-1:
-    url: "订阅链接"
+    url: "替换订阅链接"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     <<: *NodeParam
     path: './proxy_provider/providers.yaml'
-  # Node-2:
-  #   url: '替换订阅链接'
-  #   <<: *NodeParam
-  #   path: './proxy_provider/providers.yaml'
+  Node-2:
+    url: "替换订阅链接"
+    filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
+    <<: *NodeParam
+    path: './proxy_provider/providers2.yaml'
 
 # 节点筛选
 FilterHK: &FilterHK '^(?=.*(香港|HK|Hong|🇭🇰)).*$'
@@ -114,12 +115,13 @@ Auto: &Auto {type: url-test, url: 'http://cp.cloudflare.com', interval: 300, tol
 # 策略组
 proxy-groups: 
   - {name: 🎯 节点选择, type: select, proxies: [自动选择, 手动选择, DIRECT], url: https://cp.cloudflare.com}
-  - {name: 手动选择, type: select, proxies: [🇭🇰 - 手动选择, 🇯🇵 - 手动选择, 🇰🇷 - 手动选择, 🇸🇬 - 手动选择, 🇺🇸 - 手动选择, 🇬🇧 - 手动选择, 🇹🇼 - 手动选择, 🌍 - 其他手动, 🌐 - 全部手动], url: https://cp.cloudflare.com}
-  - {name: 自动选择, type: select, proxies: [🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择, 🌍 - 其他自动, 🌐 - 全部自动], url: https://cp.cloudflare.com}
+  - {name: 手动选择, type: select, proxies: [🇭🇰 - 手动选择, 🇯🇵 - 手动选择, 🇰🇷 - 手动选择, 🇸🇬 - 手动选择, 🇺🇸 - 手动选择, 🇬🇧 - 手动选择, 🇹🇼 - 手动选择, 🌍 其他节点 - 手动选择, 🌐 全部节点 - 手动选择], url: https://cp.cloudflare.com}
+  - {name: 自动选择, type: select, proxies: [🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择, 🌍 其他节点 - 自动选择, 🌐 全部节点 - 自动选择], url: https://cp.cloudflare.com}
   - {name: ✈️ 电报信息, type: select, proxies: [🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择,🇹🇼 - 自动选择]}
-  - {name: 🤖 AI, type: select, proxies: [🇺🇸 - 自动选择, 🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择]}
+  - {name: 🤖 AI, type: select, proxies: [🇺🇸 - 自动选择, 🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择]}
   - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择]}
+  - {name: 📥 下载, type: select, proxies: [DIRECT, 🎯 节点选择, 🇭🇰 - 自动选择, 🇯🇵 - 自动选择, 🇰🇷 - 自动选择, 🇸🇬 - 自动选择, 🇺🇸 - 自动选择, 🇬🇧 - 自动选择, 🇹🇼 - 自动选择]}
 
   # 自动选择
   - {name: 🇭🇰 - 自动选择, <<: *Auto, filter: *FilterHK}
@@ -140,141 +142,156 @@ proxy-groups:
   - {name: 🇹🇼 - 手动选择, <<: *Select, filter: *FilterTW}
   
   #其他地区
-  - {name: 🌍 - 其他手动, <<: *Select, filter: *FilterOthers}
-  - {name: 🌍 - 其他自动, <<: *Auto, filter: *FilterOthers}
+  - {name: 🌍 其他节点 - 自动选择, <<: *Select, filter: *FilterOthers}
+  - {name: 🌍 其他节点 - 手动选择, <<: *Auto, filter: *FilterOthers}
 #全部节点
-  - {name: 🌐 - 全部手动, <<: *Select, filter: *FilterAll}
-  - {name: 🌐 - 全部自动, <<: *Auto, filter: *FilterAll}
+  - {name: 🌐 全部节点 - 自动选择, <<: *Select, filter: *FilterAll}
+  - {name: 🌐 全部节点 - 手动选择, <<: *Auto, filter: *FilterAll}
 
 ### 规则配置
 RuleSet_classical: &RuleSet_classical {type: http, behavior: classical, interval: 43200, format: text, proxy: 🎯 节点选择}
 RuleSet_domain: &RuleSet_domain {type: http, behavior: domain, interval: 43200, format: text, proxy: 🎯 节点选择}
+domain: &domain {type: http, behavior: domain, interval: 43200, format: mrs, proxy: 🎯 节点选择}
 RuleSet_ipcidr: &RuleSet_ipcidr {type: http, behavior: ipcidr, interval: 43200, format: text, proxy: 🎯 节点选择}
 
 # 订阅规则
 rule-providers:
-  reject_non_ip_no_drop:
-    <<: *RuleSet_classical
-    url: 'https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt'
-    path: './rule_set/sukkaw_ruleset/reject_non_ip_no_drop.txt'
-
+  # 非 IP 类规则 - 丢弃的拒绝规则
   reject_non_ip_drop:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt
     path: ./rule_set/sukkaw_ruleset/reject_non_ip_drop.txt
-
+  # 非 IP 类规则 - 不丢弃的拒绝规则
+  reject_non_ip_no_drop:
+    <<: *RuleSet_classical
+    url: 'https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt'
+    path: './rule_set/sukkaw_ruleset/reject_non_ip_no_drop.txt'
+  # 非 IP 类规则 - 普通拒绝规则
   reject_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
     path: ./rule_set/sukkaw_ruleset/reject_non_ip.txt
-
+  # 域名规则 - 拒绝规则
   reject_domainset:
     <<: *RuleSet_domain
     url: https://ruleset.skk.moe/Clash/domainset/reject.txt
     path: ./rule_set/sukkaw_ruleset/reject_domainset.txt
-
-  reject_ip:
-    <<: *RuleSet_classical
-    url: https://ruleset.skk.moe/Clash/ip/reject.txt
-    path: ./rule_set/sukkaw_ruleset/reject_ip.txt
-
-  cdn_domainset:
-    <<: *RuleSet_domain
-    url: https://ruleset.skk.moe/Clash/domainset/cdn.txt
-    path: ./rule_set/sukkaw_ruleset/cdn_domainset.txt
-
+#游戏平台规则
+  games@cn_domain:
+    <<: *domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"
+    path: ./rule_set/meta_ruleset/games@cn_domain.mrs
+#游戏平台规则
+  games_domain:
+    <<: *domain
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs"
+    path: ./rule_set/meta_ruleset/games_domain.mrs
+  # 非 IP 类规则 - CDN 加速
   cdn_non_ip:
     <<: *RuleSet_domain
     url: https://ruleset.skk.moe/Clash/non_ip/cdn.txt
     path: ./rule_set/sukkaw_ruleset/cdn_non_ip.txt
-
-  # 所有流媒体（包括上述所有流媒体）
+  # 域名规则 - CDN 加速域名
+  cdn_domainset:
+    <<: *RuleSet_domain
+    url: https://ruleset.skk.moe/Clash/domainset/cdn.txt
+    path: ./rule_set/sukkaw_ruleset/cdn_domainset.txt
+  # 非 IP 类规则 - 流媒体服务
   stream_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
     path: ./rule_set/sukkaw_ruleset/stream_non_ip.txt
-  stream_ip:
-    <<: *RuleSet_classical
-    url: https://ruleset.skk.moe/Clash/ip/stream.txt
-    path: ./rule_set/sukkaw_ruleset/stream_ip.txt
-
+  # 非 IP 类规则 - AI 服务
   ai_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/ai.txt
     path: ./rule_set/sukkaw_ruleset/ai_non_ip.txt
-
+  # 非 IP 类规则 - Telegram 服务
   telegram_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/telegram.txt
     path: ./rule_set/sukkaw_ruleset/telegram_non_ip.txt
-
-  telegram_ip:
-    <<: *RuleSet_classical
-    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
-    path: ./rule_set/sukkaw_ruleset/telegram_ip.txt
-
+  # 域名规则 - 苹果 CDN
   apple_cdn:
     <<: *RuleSet_domain
     url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
     path: ./rule_set/sukkaw_ruleset/apple_cdn.txt
-
+  # 非 IP 类规则 - 苹果服务
   apple_services:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/apple_services.txt
     path: ./rule_set/sukkaw_ruleset/apple_services.txt
-
+  # 非 IP 类规则 - 苹果中国服务
   apple_cn_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
     path: ./rule_set/sukkaw_ruleset/apple_cn_non_ip.txt
-  
+  # 非 IP 类规则 - 微软 CDN
   microsoft_cdn_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
     path: ./rule_set/sukkaw_ruleset/microsoft_cdn_non_ip.txt
-
+  # 非 IP 类规则 - 微软服务
   microsoft_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/microsoft.txt
     path: ./rule_set/sukkaw_ruleset/microsoft_non_ip.txt
-  
-  # 软件更新、操作系统等大文件下载
+  # 域名规则 - 软件更新和大文件下载
   download_domainset:
     <<: *RuleSet_domain
     url: https://ruleset.skk.moe/Clash/domainset/download.txt
     path: ./rule_set/sukkaw_ruleset/download_domainset.txt
+  # 非 IP 类规则 - 软件更新和大文件下载
   download_non_ip:
     <<: *RuleSet_domain
     url: https://ruleset.skk.moe/Clash/non_ip/download.txt
     path: ./rule_set/sukkaw_ruleset/download_non_ip.txt
-
-  # 内网域名和局域网 IP
+  # 非 IP 类规则 - 内网域名和局域网
   lan_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/lan.txt
     path: ./rule_set/sukkaw_ruleset/lan_non_ip.txt
-  lan_ip:
-    <<: *RuleSet_classical
-    url: https://ruleset.skk.moe/Clash/ip/lan.txt
-    path: ./rule_set/sukkaw_ruleset/lan_ip.txt
-  
+  # 非 IP 类规则 - 国内服务
   domestic_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt
     path: ./rule_set/sukkaw_ruleset/domestic_non_ip.txt
+  # 非 IP 类规则 - 直连服务
   direct_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/direct.txt
     path: ./rule_set/sukkaw_ruleset/direct_non_ip.txt
+  # 非 IP 类规则 - 全球服务
   global_non_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/non_ip/global.txt
     path: ./rule_set/sukkaw_ruleset/global_non_ip.txt
+  # IP 类规则 - 拒绝规则
+  reject_ip:
+    <<: *RuleSet_classical
+    url: https://ruleset.skk.moe/Clash/ip/reject.txt
+    path: ./rule_set/sukkaw_ruleset/reject_ip.txt
+  # IP 类规则 - 流媒体服务
+  stream_ip:
+    <<: *RuleSet_classical
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./rule_set/sukkaw_ruleset/stream_ip.txt
+  # IP 类规则 - Telegram 服务
+  telegram_ip:
+    <<: *RuleSet_classical
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./rule_set/sukkaw_ruleset/telegram_ip.txt
+  # IP 类规则 - 内网和局域网
+  lan_ip:
+    <<: *RuleSet_classical
+    url: https://ruleset.skk.moe/Clash/ip/lan.txt
+    path: ./rule_set/sukkaw_ruleset/lan_ip.txt
+  # IP 类规则 - 国内服务
   domestic_ip:
     <<: *RuleSet_classical
     url: https://ruleset.skk.moe/Clash/ip/domestic.txt
     path: ./rule_set/sukkaw_ruleset/domestic_ip.txt
-
+  # IP 类规则 - 中国 IP
   china_ip:
     <<: *RuleSet_ipcidr
     url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
@@ -292,10 +309,12 @@ rules:
   - RULE-SET,cdn_domainset,🎯 节点选择
   - RULE-SET,cdn_non_ip,🎯 节点选择
   - RULE-SET,stream_non_ip,🎯 节点选择
+#  - RULE-SET,games@cn_domain,DIRECT
+#  - RULE-SET,games_domain,🎮 游戏平台
   - RULE-SET,telegram_non_ip,✈️ 电报信息
   - RULE-SET,apple_cdn,DIRECT
-  - RULE-SET,download_domainset,🎯 节点选择
-  - RULE-SET,download_non_ip,🎯 节点选择
+  - RULE-SET,download_domainset,📥 下载
+  - RULE-SET,download_non_ip,📥 下载
   - RULE-SET,microsoft_cdn_non_ip,DIRECT
   - RULE-SET,apple_cn_non_ip,DIRECT  
   - RULE-SET,apple_services,🍎 苹果服务
