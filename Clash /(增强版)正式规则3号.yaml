@@ -140,7 +140,7 @@ proxy-groups:
   - {name: NETFLIX, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/netflix(old).png}
   - {name: DISNEY+, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/disney(blue).png}
   - {name: Spotify, type: select, proxies: [美国节点自动, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/spotify(green).png}
-  - {name: 游戏平台, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/steam(1).png}
+  - {name: 游戏平台, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/steam(1).png}
   - {name: Twitter, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/twitter.png}
   - {name: Telegram, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/telegram(blue1).png}
   - {name: 谷歌服务, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/google(1).png}
