@@ -1,7 +1,7 @@
 # 正式版规则，优化水果下载,优化小米智能设备连接问题,用图片替换以往emoji图标,版本进行大重构,华硕直连和不让nas走代理看171-174行
 proxy-providers:
   Airport1:
-    url: "填入订阅"
+    url: "填入订阅1"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
     type: http
     interval: 86400
@@ -9,6 +9,15 @@ proxy-providers:
       enable: true
       url: 'http://cp.cloudflare.com'
       interval: 300
+  Airport2:
+    url: "填入订阅2"
+    filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: 'http://cp.cloudflare.com'
+      interval: 300 
 #    override:
 #      additional-prefix: "[夜]"
 
