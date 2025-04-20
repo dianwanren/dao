@@ -86,6 +86,7 @@ dns:
   nameserver:
     - "https://162.159.46.1:443/dns-query"
     - "https://94.140.14.140:443/dns-query"
+    - "https://9.9.9.9/dns-query"
   proxy-server-nameserver:
     - 223.5.5.5
     - 223.6.6.6
@@ -97,7 +98,9 @@ dns:
     "rule-set:cn_domain,private_domain,apple_domain,apple-cn_domain":
       - 223.5.5.5
     "rule-set:gfw_domain,geolocation-!cn":
-      - 127.0.0.1:5335
+      - "https://162.159.46.1:443/dns-query"
+      - "https://94.140.14.140:443/dns-query"
+      - "https://9.9.9.9/dns-query"
 
 # 节点筛选
 FilterHK: &FilterHK '^(?=.*(港|🇭🇰|香港|HK|Hong)).*$'
