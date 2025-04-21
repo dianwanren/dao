@@ -122,15 +122,15 @@ FilterAll: &FilterAll
 
 ###  锚点
 pr: &pr {type: select, proxies: [节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT]}
-Select: &Select {type: select, url: 'http://cp.cloudflare.com', disable-udp: false, hidden: false, include-all: true}
-Auto: &Auto {type: url-test, url: 'http://cp.cloudflare.com', interval: 300, tolerance: 50, disable-udp: false, hidden: true, include-all: true}
+Select: &Select {type: select, url: 'https://www.gstatic.com/generate_204', disable-udp: false, hidden: false, include-all: true}
+Auto: &Auto {type: url-test, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, disable-udp: false, hidden: true, include-all: true}
 
 
 ###  策略组
 proxy-groups:
   - {name: 节点选择, type: select, proxies: [自动选择, 手动选择, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/sub(1).png}
-  - {name: 自动选择, type: select, proxies: [香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], url: https://cp.cloudflare.com, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/lightning(2).png}
-  - {name: 手动选择, type: select, proxies: [香港节点手动, 台湾节点手动, 狮城节点手动, 日本节点手动, 韩国节点手动, 美国节点手动, 英国节点手动, 其它地区手动, 全部节点手动], url: https://cp.cloudflare.com, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/goodnotes.png}
+  - {name: 自动选择, type: select, proxies: [香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/lightning(2).png}
+  - {name: 手动选择, type: select, proxies: [香港节点手动, 台湾节点手动, 狮城节点手动, 日本节点手动, 韩国节点手动, 美国节点手动, 英国节点手动, 其它地区手动, 全部节点手动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/goodnotes.png}
   - {name: AI, type: select, proxies: [台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 节点选择, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/ChatGPT-green.png}
   - {name: YouTube, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/youtube.png}
   - {name: TikTok, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/tiktok(1).png}
