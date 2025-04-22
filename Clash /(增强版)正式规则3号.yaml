@@ -217,9 +217,9 @@ rules:
  # - RULE-SET,Download,DIRECT
   - RULE-SET,cn_site,DIRECT
 ###  IP 类规则（集中放置）
-  - RULE-SET,google_ip,谷歌服务,no-resolve
-  - RULE-SET,netflix_ip,NETFLIX,no-resolve
   - RULE-SET,telegram_ip,Telegram,no-resolve
+  - RULE-SET,netflix_ip,NETFLIX,no-resolve
+  - RULE-SET,google_ip,谷歌服务,no-resolve
   - RULE-SET,cn_ip,DIRECT
 ###  兜底规则
   - MATCH,漏网之鱼
