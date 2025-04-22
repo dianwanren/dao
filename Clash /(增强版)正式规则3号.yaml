@@ -215,7 +215,7 @@ rules:
   #- RULE-SET,geolocation-!cn,节点选择
 ###  地理位置和通用域名规则
   #- RULE-SET,ChinaDomain,DIRECT
-  #- RULE-SET,ChinaCompanyIp,DIRECT
+  - RULE-SET,ChinaCompanyIp,DIRECT
   #- RULE-SET,Download,DIRECT
   - RULE-SET,cn_site,DIRECT
 ###  IP 类规则（集中放置）
@@ -241,9 +241,9 @@ rule-providers:
   private_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs" }
   #proxylite: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list" }
 ###  猫猫的规则国内域名和BT下载进程
+  ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaCompanyIp.list" }
   #ChinaDomain: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaDomain.list" }
   #Download: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Download/Download.list" }
-  #ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaCompanyIp.list" }
 ###  AI人工智能
   ai_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
 ###  谷歌服务
@@ -288,4 +288,3 @@ rule-providers:
   google_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs" }
   telegram_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs" }
   netflix_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs" }
-  ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list" }
