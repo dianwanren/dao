@@ -239,8 +239,9 @@ rule-providers:
   private_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs" }
   #proxylite: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list" }
 ###  猫猫的规则国内域名和BT下载进程
-  ChinaDomain: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
-  Download: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.list" }
+  #ChinaDomain: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaDomain.list" }
+  #Download: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Download/Download.list" }
+  #ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaCompanyIp.list" }
 ###  AI人工智能
   ai_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
 ###  谷歌服务
@@ -273,7 +274,7 @@ rule-providers:
 ###  巴哈姆特
   bahamut_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bahamut.mrs" }
 ###  国外网站
-  geolocation-!cn: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs" }
+  #geolocation-!cn: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs" }
   gfw_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs" }
 ###  国内网站
   cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs" }
