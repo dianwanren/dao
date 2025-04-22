@@ -81,7 +81,7 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:private_domain,cn_domain"
+    - "rule-set:private_site,cn_site"
     - dns.msftncsi.com
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
@@ -101,10 +101,10 @@ dns:
     "+.lan": 127.0.0.1#lo
     "+.local": 127.0.0.1#lo
     "+.ts.net": 127.0.0.1#tailscale0
-    "rule-set:cn_domain,private_domain,apple_domain,apple-cn_domain":
+    "rule-set:cn_site,private_site,apple_site,apple-cn_site":
       - 223.5.5.5
       - 119.29.29.29
-    "rule-set:gfw_domain,geolocation-!cn":
+    "rule-set:gfw_site,geolocation-!cn":
       - "https://162.159.46.1:443/dns-query"
       - "https://94.140.14.140:443/dns-query"
       - "https://9.9.9.9/dns-query"
@@ -184,38 +184,38 @@ rules:
 ###  基础规则和直连规则（高优先级）
   #- RULE-SET,proxylite,节点选择
   - RULE-SET,private_ip,DIRECT,no-resolve
-  - RULE-SET,private_domain,DIRECT
-  - RULE-SET,games@cn_domain,DIRECT 
+  - RULE-SET,private_site,DIRECT
+  - RULE-SET,games@cn_site,DIRECT 
 ###  即时通讯和社交媒体
-  - RULE-SET,telegram_domain,Telegram
-  - RULE-SET,twitter_domain,Twitter
+  - RULE-SET,telegram_site,Telegram
+  - RULE-SET,twitter_site,Twitter
 ###  工作和技术类
-  - RULE-SET,github_domain,GitHub
-  - RULE-SET,ai_domain,AI
-  - RULE-SET,speedtest_domain,Speedtest
+  - RULE-SET,github_site,GitHub
+  - RULE-SET,ai_site,AI
+  - RULE-SET,speedtest_site,Speedtest
 ###  内容和媒体服务
-  - RULE-SET,youtube_domain,YouTube
-  - RULE-SET,netflix_domain,NETFLIX
-  - RULE-SET,disney_domain,DISNEY+
-  - RULE-SET,tiktok_domain,TikTok
-  - RULE-SET,spotify_domain,Spotify
-  - RULE-SET,bahamut_domain,巴哈姆特
+  - RULE-SET,youtube_site,YouTube
+  - RULE-SET,netflix_site,NETFLIX
+  - RULE-SET,disney_site,DISNEY+
+  - RULE-SET,tiktok_site,TikTok
+  - RULE-SET,spotify_site,Spotify
+  - RULE-SET,bahamut_site,巴哈姆特
 ###  游戏平台
-  - RULE-SET,games_domain,游戏平台
+  - RULE-SET,games_site,游戏平台
 ###  大型科技公司服务
-  - RULE-SET,apple_domain,苹果服务
-  - RULE-SET,google_domain,谷歌服务
-  - RULE-SET,microsoft_domain,微软服务
-  - RULE-SET,bing_domain,微软必应
-  - RULE-SET,onedrive_domain,微软云盘
+  - RULE-SET,apple_site,苹果服务
+  - RULE-SET,google_site,谷歌服务
+  - RULE-SET,microsoft_site,微软服务
+  - RULE-SET,bing_site,微软必应
+  - RULE-SET,onedrive_site,微软云盘
 ###  中国大陆以外的域名
-  - RULE-SET,gfw_domain,节点选择
+  - RULE-SET,gfw_site,节点选择
 #  - RULE-SET,geolocation-!cn,节点选择
 ###  地理位置和通用域名规则
  # - RULE-SET,ChinaDomain,DIRECT
  # - RULE-SET,ChinaCompanyIp,DIRECT
  # - RULE-SET,Download,DIRECT
-  - RULE-SET,cn_domain,DIRECT
+  - RULE-SET,cn_site,DIRECT
 ###  IP 类规则（集中放置）
   - RULE-SET,google_ip,谷歌服务,no-resolve
   - RULE-SET,netflix_ip,NETFLIX,no-resolve
@@ -236,47 +236,47 @@ rule-anchor:
 
 rule-providers: 
 ###  局域网和DNS
-  private_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs" }
+  private_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs" }
   #proxylite: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list" }
 ###  猫猫的规则国内域名和BT下载进程
   ChinaDomain: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
   Download: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.list" }
 ###  AI人工智能
-  ai_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
+  ai_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
 ###  谷歌服务
-  google_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs" }
-  youtube_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs" }
+  google_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs" }
+  youtube_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs" }
 ###  电报
-  telegram_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs" }
+  telegram_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs" }
 ###  微软服务
-  github_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs" }
-  onedrive_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/onedrive.mrs" }
-  microsoft_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs" }
-  bing_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bing.mrs" }
+  github_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs" }
+  onedrive_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/onedrive.mrs" }
+  microsoft_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs" }
+  bing_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bing.mrs" }
 ###  苹果服务
-  apple_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs" }
-  #apple@cn_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple@cn.mrs" }
-  apple-cn_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs" }
+  apple_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs" }
+  #apple@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple@cn.mrs" }
+  apple-cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs" }
 ###  速度测试
-  speedtest_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs" }
+  speedtest_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs" }
 ###  游戏平台
-  games@cn_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games@cn.mrs" }
-  games_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games.mrs" }
+  games@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games@cn.mrs" }
+  games_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games.mrs" }
 ###  影音娱乐
-  twitter_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs" }
-  tiktok_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs" }
-  spotify_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs" }
-  netflix_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs" }
-  disney_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/disney.mrs" }
+  twitter_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs" }
+  tiktok_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs" }
+  spotify_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs" }
+  netflix_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs" }
+  disney_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/disney.mrs" }
 ###  哔哩哔哩
-#  bilibili_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bilibili.mrs" }
+#  bilibili_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bilibili.mrs" }
 ###  巴哈姆特
-  bahamut_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bahamut.mrs" }
+  bahamut_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bahamut.mrs" }
 ###  国外网站
   geolocation-!cn: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs" }
-  gfw_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs" }
+  gfw_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs" }
 ###  国内网站
-  cn_domain: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs" }
+  cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs" }
 
 
 ###  IP规则
