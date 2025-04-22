@@ -103,10 +103,10 @@ dns:
     "+.lan": 127.0.0.1#lo
     "+.local": 127.0.0.1#lo
     "+.ts.net": 127.0.0.1#tailscale0
-    "rule-set:cn_site,private_site,apple_site,apple-cn_site":
+    "rule-set:cn_site,private_site,apple_site":
       - 223.5.5.5
       - 119.29.29.29
-    "rule-set:gfw_site,geolocation-!cn":
+    "rule-set:gfw_site":
       - "https://162.159.46.1:443/dns-query"
       - "https://94.140.14.140:443/dns-query"
       - "https://9.9.9.9/dns-query"
@@ -178,9 +178,9 @@ proxy-groups:
 
 rules:
 ###  让某个域名走某个代理(举例让所有asus.com走直连,如需使用去掉下面的注释)
-#  - DOMAIN-SUFFIX,asus.com,DIRECT
+  #- DOMAIN-SUFFIX,asus.com,DIRECT
 ###  让某个IP走某个代理（举例让内网某台设备走直连,如需使用去掉下面的注释）
-#  - SRC-IP-CIDR,192.168.1.2/32,DIRECT
+  #- SRC-IP-CIDR,192.168.1.2/32,DIRECT
 
 ###  以下为正式规则
 ###  基础规则和直连规则（高优先级）
@@ -212,11 +212,11 @@ rules:
   - RULE-SET,onedrive_site,微软云盘
 ###  中国大陆以外的域名
   - RULE-SET,gfw_site,节点选择
-#  - RULE-SET,geolocation-!cn,节点选择
+  #- RULE-SET,geolocation-!cn,节点选择
 ###  地理位置和通用域名规则
- # - RULE-SET,ChinaDomain,DIRECT
- # - RULE-SET,ChinaCompanyIp,DIRECT
- # - RULE-SET,Download,DIRECT
+  #- RULE-SET,ChinaDomain,DIRECT
+  #- RULE-SET,ChinaCompanyIp,DIRECT
+  #- RULE-SET,Download,DIRECT
   - RULE-SET,cn_site,DIRECT
 ###  IP 类规则（集中放置）
   - RULE-SET,telegram_ip,Telegram,no-resolve
@@ -259,7 +259,7 @@ rule-providers:
 ###  苹果服务
   apple_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs" }
   #apple@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple@cn.mrs" }
-  apple-cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs" }
+  #apple-cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs" }
 ###  速度测试
   speedtest_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs" }
 ###  游戏平台
