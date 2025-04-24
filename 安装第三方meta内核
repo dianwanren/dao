@@ -1,9 +1,8 @@
 你可以按照以下步骤来安装并修改文件名为 clash_meta。以下是步骤的调整：
 
 1. 进入内核安装目录：
-
-/etc/openclash/core/
-
+openclash的内核路径:          /etc/openclash/core/         clash_meta
+nikki的内核路径:              /usr/bin/                    mihomo
 
 2. 下载所需内核安装包：
 原作者内核项目网址:https://github.com/MetaCubeX/mihomo/releases
