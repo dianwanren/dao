@@ -43,7 +43,7 @@ profile:
 external-ui: ui
 external-ui-name: zashboard
 external-controller: 0.0.0.0:9099
-external-ui-url: https://raw.ihtw.moe/raw.githubusercontent.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
+external-ui-url: https://raw.ihtw.moe/github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
 
 ###  域名嗅探
 sniffer:
