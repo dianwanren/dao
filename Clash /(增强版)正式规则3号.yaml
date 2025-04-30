@@ -43,7 +43,7 @@ profile:
 external-ui: ui
 external-ui-name: zashboard
 external-controller: 0.0.0.0:9099
-external-ui-url: https://raw.ihtw.moe/github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
+external-ui-url: https://raw.ihtw.moe/raw.githubusercontent.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
 
 ###  域名嗅探
 sniffer:
@@ -130,50 +130,50 @@ Auto: &Auto {type: url-test, url: 'https://www.gstatic.com/generate_204', interv
 
 ###  策略组
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [自动选择, 手动选择, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/sub(1).png}
-  - {name: 自动选择, type: select, proxies: [香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/lightning(2).png}
-  - {name: 手动选择, type: select, proxies: [香港节点手动, 台湾节点手动, 狮城节点手动, 日本节点手动, 韩国节点手动, 美国节点手动, 英国节点手动, 其它地区手动, 全部节点手动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/goodnotes.png}
-  - {name: AI, type: select, proxies: [台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 节点选择, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/ChatGPT-green.png}
-  - {name: YouTube, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/youtube.png}
-  - {name: TikTok, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/tiktok(1).png}
-  - {name: NETFLIX, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/netflix(old).png}
-  - {name: DISNEY+, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/disney(blue).png}
-  - {name: Spotify, type: select, proxies: [美国节点自动, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/spotify(green).png}
-  - {name: 游戏平台, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/steam(1).png}
-  - {name: Twitter, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/twitter.png}
-  - {name: Telegram, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/telegram(blue1).png}
-  - {name: 谷歌服务, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/google(1).png}
-  - {name: 苹果服务, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/apple(1).png}
-  - {name: 微软服务, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/microsoft.png}
-  - {name: 微软必应, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/bing(2).png}
-  - {name: 微软云盘, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/OneDrive.png}
-  - {name: GitHub, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/github.png}
-  - {name: Speedtest, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/speedtest.png}
-  - {name: 巴哈姆特, type: select, proxies: [台湾节点自动, 节点选择, 香港节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/bahamute.png}
-  - {name: 漏网之鱼, <<: *pr, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/rocket(1).png}
+  - {name: 节点选择, type: select, proxies: [自动选择, 手动选择, DIRECT], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/sub(1).png}
+  - {name: 自动选择, type: select, proxies: [香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/lightning(2).png}
+  - {name: 手动选择, type: select, proxies: [香港节点手动, 台湾节点手动, 狮城节点手动, 日本节点手动, 韩国节点手动, 美国节点手动, 英国节点手动, 其它地区手动, 全部节点手动], url: https://www.gstatic.com/generate_204, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/goodnotes.png}
+  - {name: AI, type: select, proxies: [台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 节点选择, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT-green.png}
+  - {name: YouTube, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/youtube.png}
+  - {name: TikTok, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/tiktok(1).png}
+  - {name: NETFLIX, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/netflix(old).png}
+  - {name: DISNEY+, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/disney(blue).png}
+  - {name: Spotify, type: select, proxies: [美国节点自动, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png}
+  - {name: 游戏平台, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/steam(1).png}
+  - {name: Twitter, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitter.png}
+  - {name: Telegram, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/telegram(blue1).png}
+  - {name: 谷歌服务, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/google(1).png}
+  - {name: 苹果服务, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/apple(1).png}
+  - {name: 微软服务, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/microsoft.png}
+  - {name: 微软必应, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bing(2).png}
+  - {name: 微软云盘, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/OneDrive.png}
+  - {name: GitHub, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/github.png}
+  - {name: Speedtest, type: select, proxies: [DIRECT, 节点选择, 香港节点自动, 台湾节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/speedtest.png}
+  - {name: 巴哈姆特, type: select, proxies: [台湾节点自动, 节点选择, 香港节点自动, 狮城节点自动, 日本节点自动, 韩国节点自动, 美国节点自动, 英国节点自动, 其它地区自动, 全部节点自动, DIRECT], icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bahamute.png}
+  - {name: 漏网之鱼, <<: *pr, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/rocket(1).png}
 
 ###  节点组
 ###  自动选择
-  - {name: 香港节点自动, <<: *Auto, filter: *FilterHK, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Hongkong(2).png}
-  - {name: 台湾节点自动, <<: *Auto, filter: *FilterTW, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/taiwan.png}
-  - {name: 狮城节点自动, <<: *Auto, filter: *FilterSG, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/singapore(2).png}
-  - {name: 日本节点自动, <<: *Auto, filter: *FilterJP, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Japan(1).png}
-  - {name: 韩国节点自动, <<: *Auto, filter: *FilterKR, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Korea(1).png}
-  - {name: 美国节点自动, <<: *Auto, filter: *FilterUS, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/US(1).png}
-  - {name: 英国节点自动, <<: *Auto, filter: *FilterUK, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/UnitedKingdom.png}
-  - {name: 其它地区自动, <<: *Auto, filter: *FilterOthers, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/XXAI.png}
-  - {name: 全部节点自动, <<: *Auto, filter: *FilterAll, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/quanqiu(1).png}
+  - {name: 香港节点自动, <<: *Auto, filter: *FilterHK, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Hongkong(2).png}
+  - {name: 台湾节点自动, <<: *Auto, filter: *FilterTW, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/taiwan.png}
+  - {name: 狮城节点自动, <<: *Auto, filter: *FilterSG, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/singapore(2).png}
+  - {name: 日本节点自动, <<: *Auto, filter: *FilterJP, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Japan(1).png}
+  - {name: 韩国节点自动, <<: *Auto, filter: *FilterKR, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Korea(1).png}
+  - {name: 美国节点自动, <<: *Auto, filter: *FilterUS, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/US(1).png}
+  - {name: 英国节点自动, <<: *Auto, filter: *FilterUK, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/UnitedKingdom.png}
+  - {name: 其它地区自动, <<: *Auto, filter: *FilterOthers, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/XXAI.png}
+  - {name: 全部节点自动, <<: *Auto, filter: *FilterAll, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/quanqiu(1).png}
 
 ###  手动选择
-  - {name: 香港节点手动, <<: *Select, filter: *FilterHK, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Hongkong(2).png}
-  - {name: 台湾节点手动, <<: *Select, filter: *FilterTW, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/taiwan.png}
-  - {name: 狮城节点手动, <<: *Select, filter: *FilterSG, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/singapore(2).png}
-  - {name: 日本节点手动, <<: *Select, filter: *FilterJP, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Japan(1).png}
-  - {name: 韩国节点手动, <<: *Select, filter: *FilterKR, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/Korea(1).png}
-  - {name: 美国节点手动, <<: *Select, filter: *FilterUS, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/US(1).png}
-  - {name: 英国节点手动, <<: *Select, filter: *FilterUK, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/UnitedKingdom.png}
-  - {name: 其它地区手动, <<: *Select, filter: *FilterOthers, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/XXAI.png}
-  - {name: 全部节点手动, <<: *Select, filter: *FilterAll, icon: https://raw.ihtw.moe/github.com/lige47/QuanX-icon-rule/raw/main/icon/quanqiu(1).png}
+  - {name: 香港节点手动, <<: *Select, filter: *FilterHK, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Hongkong(2).png}
+  - {name: 台湾节点手动, <<: *Select, filter: *FilterTW, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/taiwan.png}
+  - {name: 狮城节点手动, <<: *Select, filter: *FilterSG, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/singapore(2).png}
+  - {name: 日本节点手动, <<: *Select, filter: *FilterJP, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Japan(1).png}
+  - {name: 韩国节点手动, <<: *Select, filter: *FilterKR, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Korea(1).png}
+  - {name: 美国节点手动, <<: *Select, filter: *FilterUS, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/US(1).png}
+  - {name: 英国节点手动, <<: *Select, filter: *FilterUK, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/UnitedKingdom.png}
+  - {name: 其它地区手动, <<: *Select, filter: *FilterOthers, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/XXAI.png}
+  - {name: 全部节点手动, <<: *Select, filter: *FilterAll, icon: https://raw.ihtw.moe/raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/quanqiu(1).png}
 
 
 rules:
@@ -238,53 +238,53 @@ rule-anchor:
 
 rule-providers: 
 ###  局域网和DNS
-  private_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs" }
-  #proxylite: { <<: *classicaltxt, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list" }
+  private_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
+  #proxylite: { <<: *classicaltxt, url: "https://raw.ihtw.moe/raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list" }
 ###  猫猫的规则国内域名和BT下载进程
-  ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaCompanyIp.list" }
-  #ChinaDomain: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ChinaDomain.list" }
-  #Download: { <<: *classicaltxt, url: "https://raw.ihtw.moe/github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Download/Download.list" }
+  ChinaCompanyIp: { <<: *classicaltxt, url: "https://raw.ihtw.moe/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list" }
+  #ChinaDomain: { <<: *classicaltxt, url: "https://raw.ihtw.moe/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list" }
+  #Download: { <<: *classicaltxt, url: "https://raw.ihtw.moe/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.list" }
 ###  AI人工智能
-  ai_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
+  ai_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
 ###  谷歌服务
-  google_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs" }
-  youtube_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs" }
+  google_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
+  youtube_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs" }
 ###  电报
-  telegram_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs" }
+  telegram_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
 ###  微软服务
-  github_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs" }
-  onedrive_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/onedrive.mrs" }
-  microsoft_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs" }
-  bing_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bing.mrs" }
+  github_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs" }
+  onedrive_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs" }
+  microsoft_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs" }
+  bing_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bing.mrs" }
 ###  苹果服务
-  apple_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs" }
-  #apple@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple@cn.mrs" }
-  #apple-cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs" }
+  apple_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
+  #apple@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.mrs" }
+  #apple-cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
 ###  速度测试
-  speedtest_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs" }
+  speedtest_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs" }
 ###  游戏平台
-  games@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games@cn.mrs" }
-  games_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games.mrs" }
+  games@cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.mrs" }
+  games_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs" }
 ###  影音娱乐
-  twitter_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs" }
-  tiktok_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs" }
-  spotify_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs" }
-  netflix_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs" }
-  disney_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/disney.mrs" }
+  twitter_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs" }
+  tiktok_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs" }
+  spotify_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs" }
+  netflix_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs" }
+  disney_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs" }
 ###  哔哩哔哩
-#  bilibili_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bilibili.mrs" }
+#  bilibili_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs" }
 ###  巴哈姆特
-  bahamut_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/bahamut.mrs" }
+  bahamut_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs" }
 ###  国外网站
-  #geolocation-!cn: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs" }
-  gfw_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs" }
+  #geolocation-!cn: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs" }
+  gfw_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs" }
 ###  国内网站
-  cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs" }
+  cn_site: { <<: *mrs, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
 
 
 ###  IP规则
-  private_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/private.mrs" }
-  cn_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs" }
-  google_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs" }
-  telegram_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs" }
-  netflix_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs" }
+  private_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs" }
+  cn_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs" }
+  google_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
+  telegram_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs" }
+  netflix_ip: { <<: *mrsip, url: "https://raw.ihtw.moe/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs" }
