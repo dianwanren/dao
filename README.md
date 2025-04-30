@@ -1,3 +1,53 @@
+第一次更新时
+
+1. 拉取仓库源
+```shell
+curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh | ash
+```
+2. 卸载 & 重置
+```shell
+curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/uninstall.sh | ash
+```
+3. 安装
+```shell
+opkg install nikki
+opkg install luci-app-nikki
+opkg install luci-i18n-nikki-zh-cn
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 feichangdao:                 正式版自用规则（通用规则）
 
 ```bash
