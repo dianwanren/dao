@@ -5,11 +5,11 @@ p: &p {type: http, interval: 86400, health-check: {enable: true, url: https://ww
 
 ### 订阅配置
 proxy-providers:
-  dingyue1:
+  订阅A:
     <<: *p
     url: "填入你的订阅链接1"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
-  dingyue2:
+  订阅B:
     <<: *p
     url: "填入你的订阅链接2"
     filter: "^(?!.*(剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6)).*$"
