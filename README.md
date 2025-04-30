@@ -1,6 +1,6 @@
 第一次更新时
 
-1. 拉取仓库源
+1. 拉取仓库源(第二次及之后跳过这一步)
 ```shell
 curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh | ash
 ```
@@ -8,7 +8,14 @@ curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/f
 ```shell
 curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/uninstall.sh | ash
 ```
-3. 安装
+
+
+3. 更新op软件仓库
+```shell
+opkg update
+```
+
+4. 安装
 ```shell
 opkg install nikki
 opkg install luci-app-nikki
