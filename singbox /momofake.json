@@ -2,8 +2,8 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
-      {"tag": "public", "type": "https", "server": "223.5.5.5", "domain_resolver": "local"},
-      {"tag": "foreign", "type": "https", "server": "1.1.1.1", "detour": "🚀 默认代理"},
+      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
+      {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "🚀 默认代理"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
@@ -21,20 +21,23 @@
     "reverse_mapping": true
   },
   "outbounds": [
+
     {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "🌐 全球直连", "👆 手动选择"]},
+    {"tag": "👆 手动选择", "type": "selector", "outbounds": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}]},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}], "interval": "10m", "tolerance": 100},
     {"tag": "🧠 AI", "type": "selector", "outbounds": ["🇯🇵 小日子", "🚀 默认代理", "🇸🇬 坡县", "🇺🇲 鹰酱"]},
-    {"tag": "📺 YouTube", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "🔍 Google", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "📺 YouTube", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🔍 Google", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
     {"tag": "👨‍💻 Github", "type": "selector", "outbounds": ["🚀 默认代理", "🇯🇵 小日子", "🇭🇰 港岛", "🇸🇬 坡县", "🇺🇲 鹰酱", "👆 手动选择"]},
     {"tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 默认代理", "🇸🇬 坡县", "🇭🇰 港岛", "🇯🇵 小日子", "🇺🇲 鹰酱", "👆 手动选择"]},
-    {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
     {"tag": "🎧 spotify", "type": "selector", "outbounds": ["🇺🇲 鹰酱", "🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "💳 PayPal", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "🎮 Steam", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "☁️ OneDrive", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
-    {"tag": "🍏 Apple", "type": "selector", "outbounds": ["🌐 全球直连", "🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "💳 PayPal", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🎮 Steam", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "☁️ OneDrive", "type": "selector", "outbounds": ["🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
+    {"tag": "🍏 Apple", "type": "selector", "outbounds": ["🌐 全球直连", "🚀 默认代理", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱",  "♻️ 自动选择", "👆 手动选择"]},
     {"tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🌐 全球直连"]},
     {"tag": "🇭🇰 港岛", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇹🇼 湾湾", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|TW|tw|台湾|台|Taiwan"]}, {"action": "exclude", "keywords": ["免费"]}]},
@@ -43,12 +46,9 @@
     {"tag": "🇸🇬 坡县", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇸🇬|SG|sg|新加坡|坡|狮城|Singapore"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇬🇧 雾都", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇬🇧|GB|uk|英国|英|London|UK"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇺🇲 鹰酱", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇲|🇺🇸|US|us|美国|美|United States"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "👆 手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}]},
-    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}], "interval": "10m", "tolerance": 100},
     {"tag": "📉 延迟辅助", "type": "urltest", "outbounds": ["🚀 默认代理", "🌐 全球直连"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "👆 手动选择", "♻️ 自动选择", "🧠 AI", "📺 YouTube", "🔍 Google", "👨‍💻 Github", "📲 Telegram", "🎵 TikTok", "🎧 spotify", "🎥 Netflix", "💳 PayPal", "🎮 Steam", "🪟 Microsoft", "☁️ OneDrive", "🍏 Apple", "🐟 漏网之鱼", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "📉 延迟辅助", "🌐 全球直连"]},
-    {"tag": "🌐 全球直连", "type": "urltest", "outbounds": ["⭕️ 直连出口"]},
-    {"tag": "⭕️ 直连出口", "type": "direct"}
+    {"tag": "🌐 全球直连", "type": "direct"}
   ],
   "route": {
     "rules": [
@@ -81,7 +81,7 @@
       {"rule_set": "geoip-cn", "outbound": "🌐 全球直连"}
     ],
     "rule_set": [
-      {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json", "download_detour": "🌐 全球直连"},
+      {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter.json", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "🌐 全球直连"},
@@ -90,8 +90,8 @@
       {"tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs", "download_detour": "🌐 全球直连"},
-      {"tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs", "download_detour": "🌐 全球直连"},
-      {"tag": "geosite-spotify", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs", "download_detour": "🌐 全球直连"},
+      {"tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github鹰酱ercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs", "download_detour": "🌐 全球直连"},
+      {"tag": "geosite-spotify", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github鹰酱ercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs", "download_detour": "🌐 全球直连"},
       {"tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs", "download_detour": "🌐 全球直连"},
@@ -161,7 +161,7 @@
       "external_ui": "/etc/momo/run/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🌐 全球直连",
-      "secret": "ee28b04e360d6d1d0be8433d49574a8d78f521f3",
+      "secret": "",
       "default_mode": "rule"
     }
   },
