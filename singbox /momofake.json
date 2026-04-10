@@ -21,7 +21,6 @@
     "reverse_mapping": true
   },
   "outbounds": [
-
     {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "🌐 全球直连", "👆 手动选择"]},
     {"tag": "👆 手动选择", "type": "selector", "outbounds": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}]},
     {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["剩余|流量|到期|套餐|官网|官方|游戏|发布|订阅|地址|访问|欢迎|IPV6"]}], "interval": "10m", "tolerance": 100},
