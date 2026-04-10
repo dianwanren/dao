@@ -160,7 +160,7 @@
       "external_ui": "/etc/momo/run/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🌐 全球直连",
-      "secret": "",
+      "secret": "854d40bddf7d9e2c6c97d3eb00fcf21fd721cddc",
       "default_mode": "rule"
     }
   },
