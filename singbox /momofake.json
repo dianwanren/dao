@@ -47,7 +47,8 @@
     {"tag": "🇺🇲 鹰酱", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "📉 延迟辅助", "type": "urltest", "outbounds": ["🚀 默认代理", "🌐 全球直连"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "👆 手动选择", "♻️ 自动选择", "🧠 AI", "📺 YouTube", "🔍 Google", "👨‍💻 Github", "📲 Telegram", "🎵 TikTok", "🎧 spotify", "🎥 Netflix", "💳 PayPal", "🎮 Steam", "🪟 Microsoft", "☁️ OneDrive", "🍏 Apple", "🐟 漏网之鱼", "🇭🇰 港岛", "🇹🇼 湾湾", "🇰🇷 棒子", "🇯🇵 小日子", "🇸🇬 坡县", "🇬🇧 雾都", "🇺🇲 鹰酱", "📉 延迟辅助", "🌐 全球直连"]},
-    {"tag": "🌐 全球直连", "type": "direct"}
+    {"tag": "🌐 全球直连", "type": "urltest", "outbounds": ["⭕️ 直连出口"]},
+    {"tag": "⭕️ 直连出口","type": "direct"}
   ],
   "route": {
     "rules": [
