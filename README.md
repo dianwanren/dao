@@ -11,19 +11,19 @@ wget -O - https://github.com/nikkinikki-org/OpenWrt-momo/raw/refs/heads/main/fee
 
 2. 更新op软件仓库
 ```shell
-opkg update
+apk update
 ```
 
 3. 安装
 ```shell
-opkg install nikki
-opkg install luci-app-nikki
-opkg install luci-i18n-nikki-zh-cn
+apk add nikki
+apk add luci-app-nikki
+apk add luci-i18n-nikki-zh-cn
 ```
 ```shell
-opkg install momo
-opkg install luci-app-momo
-opkg install luci-i18n-momo-zh-cn
+apk install momo
+apk install luci-app-momo
+apk install luci-i18n-momo-zh-cn
 ```
 
 ..................................................................................................................................................................................................................
